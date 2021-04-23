@@ -26,35 +26,46 @@ sixthtProject.addEventListener('mouseover',()=>{
     document.querySelector(".text6").innerHTML = 'Proximamente... Proyecto Backend.';
 });
 
-// const form = document.getElementById('contact-form');
-// form.addEventListener('submit', (e)=>{
-//     e.preventDefault();
-//     let name = document.getElementById('name').value;
-//     console.log(name);
+const $form = document.getElementById('contact-form'); //usamos el dolar para ver que es un elemento del dom
+const $buttonMailto = document.querySelector('#trucazo');
+$form.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event){
+    event.preventDefault();
+    const form = new FormData(this);
+    $buttonMailto.setAttribute('href', `mailto:adamaguirre96@gmail.com?subject=${form.get('name')} - ${form.get('email')}&body=${form.get('message')}`);
+    $buttonMailto.click();
+    const name = document.querySelector('#name').value = "";
+    const email = document.querySelector('#email').value = "";
+    const message = document.querySelector('#message').value = "";
+}
     
-// });
+    
+  
+    
 
 
-$('#contact-form').on('submit', (e)=>{
-    e.preventDefault();
-    let name = $('#name').val();
-    let email = $('#email').val();
-    let message = $('#message').val();
-    let advice = document.querySelector('.alert');
+
+// $('#contact-form').on('submit', (e)=>{
+//     e.preventDefault();
+//     let name = $('#name').val();
+//     let email = $('#email').val();
+//     let message = $('#message').val();
+//     let advice = document.querySelector('.alert');
    
-    $.post('back/email.php',
-    {'name':name, 'email':email, 'message':message},(data)=>{
-        if(data){
-            advice.style.display = 'block';
-            name = $('#name').val("");
-            email = $('#email').val("");
-            message = $('#message').val("");
-        }else{
-            advice = document.querySelector('.alert').value = 'Contáctame a travez de uno de los medios detallados abajo!';
-            advice.style.backgroundColor = '#f44336'
-            advice.style.display = 'block';
+//     $.post('back/email.php',
+//     {'name':name, 'email':email, 'message':message},(data)=>{
+//         if(data){
+//             advice.style.display = 'block';
+//             name = $('#name').val("");
+//             email = $('#email').val("");
+//             message = $('#message').val("");
+//         }else{
+//             advice = document.querySelector('.alert').value = 'Contáctame a travez de uno de los medios detallados abajo!';
+//             advice.style.backgroundColor = '#f44336'
+//             advice.style.display = 'block';
             
-        }
-    });
-});
+//         }
+//     });
+// });
 

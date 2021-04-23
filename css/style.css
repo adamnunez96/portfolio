@@ -206,6 +206,9 @@ h1{
 #project-container a:hover .span-tile{
     color: var(--naranja);
 }
+#trucazo{
+    display: none;
+}
 
 /*SECCION DE CONTACTOS*/
 #contact{
