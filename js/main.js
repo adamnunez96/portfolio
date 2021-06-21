@@ -17,7 +17,7 @@ thirdProject.addEventListener('mouseover',()=>{
     
 });
 fourthProject.addEventListener('mouseover',()=>{
-    document.querySelector(".text4").innerHTML = 'Proximamente... Proyecto Backend.';
+    document.querySelector(".text4").innerHTML = 'Sistema de Compra, Venta y Servicios de taller de Motocicletas - desarrollado para la defensa de mi tesis, actualmente en proceso de desarrollo.';
 });
 fifthProject.addEventListener('mouseover',()=>{
     document.querySelector(".text5").innerHTML = 'Proximamente... Proyecto Backend.';
